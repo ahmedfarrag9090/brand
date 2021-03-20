@@ -8,7 +8,10 @@ body{
     color: #2c343b;
     line-height: 1.4;
     font-size: 14px;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     letter-spacing: 0.5px;
     scroll-behavior: smooth
 }
@@ -241,19 +244,37 @@ header .slider{
     top: 0;
     left: 0;
     flex-shrink: 0;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
     height: 100%;
     
 }
 
-.slider .img1{animation: slide1 20s infinite}
+.slider .img1{-webkit-animation: slide1 20s infinite;animation: slide1 20s infinite}
 
-.slider .img2{animation: slide2 20s infinite}
+.slider .img2{-webkit-animation: slide2 20s infinite;animation: slide2 20s infinite}
 
-.slider .img3{animation: slide3 20s infinite}
+.slider .img3{-webkit-animation: slide3 20s infinite;animation: slide3 20s infinite}
 
-.slider .img4{animation: slide4 20s infinite}
+.slider .img4{-webkit-animation: slide4 20s infinite;animation: slide4 20s infinite}
+
+@-webkit-keyframes slide1 {
+
+    0%, 5%, 15%, 100%{
+
+        opacity: 1;
+    }
+    25%, 30%, 40%{
+        opacity: 0;
+    }
+    50%, 60%, 65%{
+        opacity: 0;
+    }
+    75%, 85%{
+        opacity: 0;
+    }
+}
 
 @keyframes slide1 {
 
@@ -263,6 +284,23 @@ header .slider{
     }
     25%, 30%, 40%{
         opacity: 0;
+    }
+    50%, 60%, 65%{
+        opacity: 0;
+    }
+    75%, 85%{
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes slide2 {
+
+    0%, 5%, 15%, 100%{
+
+        opacity: 0;
+    }
+    25%, 30%, 40%{
+        opacity: 1;
     }
     50%, 60%, 65%{
         opacity: 0;
@@ -289,6 +327,23 @@ header .slider{
     }
 }
 
+@-webkit-keyframes slide3 {
+
+    0%, 5%, 15%, 100%{
+
+        opacity: 0;
+    }
+    25%, 30%, 40%{
+        opacity: 0;
+    }
+    50%, 60%, 65%{
+        opacity: 1;
+    }
+    75%, 85%{
+        opacity: 0;
+    }
+}
+
 @keyframes slide3 {
 
     0%, 5%, 15%, 100%{
@@ -303,6 +358,23 @@ header .slider{
     }
     75%, 85%{
         opacity: 0;
+    }
+}
+
+@-webkit-keyframes slide4 {
+
+    0%, 5%, 15%, 100%{
+
+        opacity: 0;
+    }
+    25%, 30%, 40%{
+        opacity: 0;
+    }
+    50%, 60%, 65%{
+        opacity: 0;
+    }
+    75%, 85%{
+        opacity: 1;
     }
 }
 
@@ -413,6 +485,18 @@ header .header-content .btn:hover{color:#337ab7;background: none;}
     border-right: 1px solid #bbb;
     font-size: 16px;
 }
+.search .search-form .submit-form input::-webkit-input-placeholder{
+    color: rgba(96, 111, 126, .8);
+}
+.search .search-form .submit-form input::-moz-placeholder{
+    color: rgba(96, 111, 126, .8);
+}
+.search .search-form .submit-form input:-ms-input-placeholder{
+    color: rgba(96, 111, 126, .8);
+}
+.search .search-form .submit-form input::-ms-input-placeholder{
+    color: rgba(96, 111, 126, .8);
+}
 .search .search-form .submit-form input::placeholder{
     color: rgba(96, 111, 126, .8);
 }
@@ -520,7 +604,8 @@ header .header-content .btn:hover{color:#337ab7;background: none;}
 .popular .pop-carousel .carousel-stage > div .car-img img{
     min-width: 100%;
     min-height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .popular .pop-carousel .carousel-stage .car-cont{
