@@ -4,16 +4,11 @@ $(function(){
 
         if($(window).scrollTop() >= '150'){
 
-            $('nav').fadeOut();
-        }else{
-            $('nav').fadeIn();
-        }
-
-        if($(window).scrollTop() >= '150'){
-
             $('.scroll-top-btn').fadeIn()
+            $('nav').css('background-color', 'rgba(0, 0, 0, .6)');
         }else{
             $('.scroll-top-btn').fadeOut()
+            $('nav').css('background-color', 'rgba(0, 0, 0, 0)');
         }
 
     });
@@ -28,6 +23,7 @@ $(function(){
 
     $('.menu-bar ul li').on('click', function(){
 
+        $(this).addClass('active').siblings('li').removeClass('active')
 
         $('body, html').animate({
             scrollTop : ($($(this).data('section')) .offset().top )
@@ -40,6 +36,8 @@ $(function(){
         $('.menu-bar').slideToggle()
         $('.menu-btn i').toggleClass('hidden')
     })
+
+
 
 
 
